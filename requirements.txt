@@ -3,3 +3,4 @@ black
 pre-commit
 pycodestyle
 tox
+Sphinx
