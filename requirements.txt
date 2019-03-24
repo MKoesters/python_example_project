@@ -3,6 +3,5 @@ black
 pre-commit
 pycodestyle
 tox
-Sphinx
 coverage
 codecov
