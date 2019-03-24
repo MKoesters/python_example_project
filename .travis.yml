@@ -16,7 +16,7 @@ deploy:
 
 script:
   - tox
-  - $PIP install cibuildwheel==0.7.1
+  - pip install cibuildwheel==0.7.1
   - cibuildwheel --output-dir wheelhouse
   - |
     if [[ $TRAVIS_TAG ]]; then
