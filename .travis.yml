@@ -15,12 +15,14 @@ env:
 matrix:
   include:
     - python: 3.6
-      env: TOXENV=testenv
+      env: TOXENV=test
     - python: 3.6
       env: TOXENV=docs
+    - python: 3.6
+      env: TOXENV=code_format
 
 script:
-  - tox -e testenv,docs
+  - tox -e testenv,docs,code_format
   - |
     if [[ $TRAVIS_TAG ]]; then
       python3 setup.py sdist
