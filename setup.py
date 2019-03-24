@@ -8,7 +8,7 @@ import os
 import sys
 
 
-PACKAGE_NAME = "src"
+PACKAGE_NAME = "python_example_project_boilerplate"
 AUTHORS = ""
 MAIl = ""
 # We store our version number in a simple text file:
