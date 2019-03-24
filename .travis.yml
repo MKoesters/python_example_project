@@ -8,10 +8,6 @@ env:
     - TWINE_USERNAME=MKoesters
     # Note: TWINE_PASSWORD is set in Travis settings
 
-deploy:
-   provider: pypi
-   server: https://testpypi.python.org/pypi
-
 script:
   - tox
   - pip3 install cibuildwheel
@@ -19,5 +15,5 @@ script:
   - |
     if [[ $TRAVIS_TAG ]]; then
       python -m pip install twine
-      python -m twine upload wheelhouse/*.whl
+      python -m twine upload --repository-url https://test.pypi.org/legacy/ wheelhouse/*.whl
     fi
