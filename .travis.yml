@@ -1,10 +1,14 @@
 env:
   global:
-    - TWINE_USERNAME=...your pypi username...
+    - TWINE_USERNAME=MKoesters
     # Note: TWINE_PASSWORD is set in Travis settings
 
+deploy:
+   provider: pypi
+   server: https://testpypi.python.org/pypi
+
 script:
-  - $PIP install cibuildwheel==0.7.1
+  - pip install cibuildwheel==0.7.1
   - cibuildwheel --output-dir wheelhouse
   - |
     if [[ $TRAVIS_TAG ]]; then
