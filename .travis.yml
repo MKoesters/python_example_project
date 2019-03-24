@@ -1,3 +1,10 @@
+language: python
+python:
+      - "3.4"
+      - "3.5"
+      - "3.6"
+sudo: false
+
 env:
   global:
     - TWINE_USERNAME=MKoesters
@@ -8,6 +15,7 @@ deploy:
    server: https://testpypi.python.org/pypi
 
 script:
+  - tox
   - pip install cibuildwheel==0.7.1
   - cibuildwheel --output-dir wheelhouse
   - |
