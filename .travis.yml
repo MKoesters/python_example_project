@@ -12,6 +12,7 @@ script:
   - tox
   - pip3 install cibuildwheel
   - cibuildwheel --output-dir wheelhouse
+  - echo $TRAVIS_TAG
   - |
     if [[ $TRAVIS_TAG ]]; then
       python -m pip install twine
