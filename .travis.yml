@@ -10,7 +10,10 @@ env:
 
 script:
   - tox
-  - python3 setup.py sdist
-  - python3 setup.py bdist_wheel --universal
-  - pip3 install twine
-  - twine upload --repository-url https://test.pypi.org/legacy/ dist/*
+  - |
+    if [[ $TRAVIS_TAG ]]; then
+      python3 setup.py sdist
+      python3 setup.py bdist_wheel --universal
+      pip3 install twine
+      twine upload --repository-url https://test.pypi.org/legacy/ dist/*
+    fi
