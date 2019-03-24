@@ -19,12 +19,12 @@ matrix:
     - python: 3.7
       env: TOXENV=py37
       dist: xenial
-    - python: pypy3.5-6.0
-      env: TOXENV=pypy3
     - python: 3.6
       env: TOXENV=docu
+      install: true
     - python: 3.6
       env: TOXENV=format
+      install: true
 
 script:
   - tox
