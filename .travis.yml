@@ -12,6 +12,11 @@ env:
     - TWINE_USERNAME=MKoesters
     # Note: TWINE_PASSWORD is set in Travis settings
 
+matrix:
+  include:
+    - python: 3.6
+      env: TOXENV=testenv
+
 script:
   - tox
   - |
