@@ -10,7 +10,7 @@ env:
 
 script:
   - tox
-  - pip3 install cibuildwheel
-  - cibuildwheel --output-dir wheelhouse
+  - python3 setup.py sdist
+  - python3 setup.py bdist_wheel --universal
   - pip3 install twine
-  - twine upload --repository-url https://test.pypi.org/legacy/ wheelhouse/*.whl
+  - twine upload --repository-url https://test.pypi.org/legacy/ dist/*
